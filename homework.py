@@ -52,7 +52,7 @@ def multiple_ints(first_value: int, second_value: int) -> int:
         multiply = first_value * second_value
         return multiply
     except ValueError:
-        return ValueError
+        raise ValueError
 
 
 
@@ -87,7 +87,7 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
         multiply = int(first_value) * int(second_value)
         return multiply
     except:
-        return OurAwesomeException
+        raise OurAwesomeException
 
 
 def is_word_in_text(word: str, text: str) -> bool:
