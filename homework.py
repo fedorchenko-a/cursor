@@ -31,7 +31,7 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    return id(first) == id(second)
+    return first is second
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -48,11 +48,10 @@ def multiple_ints(first_value: int, second_value: int) -> int:
     Returns:
         Product of elements
     """
-    try:
-        multiply = first_value * second_value
+    
+    multiply = first_value * second_value
         return multiply
-    except ValueError:
-        raise ValueError
+    
 
 
 
@@ -106,10 +105,7 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> False
         
     """
-    if word in text:
-        return True
-    else:
-        return False
+    return word in text
 
 
 def some_loop_exercise() -> list:
@@ -120,10 +116,8 @@ def some_loop_exercise() -> list:
    """ li = list(range(13))
     li.remove(6)
     li.remove(7)"""
-    for item in range(13):
-        if item not in [6, 7]:
-            li.append(item)
-    return li
+    list2 = [a for a in range(13) if a not in {6, 7}]
+    return list2
 
 
 
